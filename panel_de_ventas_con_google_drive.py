@@ -606,5 +606,11 @@ st.sidebar.markdown("- Use los controles de los gráficos para zoom y detalles")
 st.sidebar.markdown("- Exporte datos con el menú de los gráficos (ícono de cámara)")
 
 st.sidebar.markdown("---")
+
+# Agregar botón de actualización
+if st.sidebar.button("🔄 Actualizar Datos", help="Haz clic para forzar la actualización de los datos"):
+    st.cache_data.clear()
+    st.rerun()
+
 st.sidebar.markdown(f"📅 **Datos desde:** {fecha_min} **hasta** {fecha_max}")
 st.sidebar.markdown(f"🔄 **Última actualización:** {datetime.now().strftime('%d/%m/%Y %H:%M')}")
